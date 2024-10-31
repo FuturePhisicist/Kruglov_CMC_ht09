@@ -1,2 +1,4 @@
 printrandom
+.clang-format
+
 *.o

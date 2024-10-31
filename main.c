@@ -66,13 +66,11 @@ main(int argc, char **argv)
 
     const char *SEED = argv[3];
     RandomSource *generator = fn(SEED);
-    if (generator == NULL)
-    {
+    if (generator == NULL) {
         fprintf(stderr, "Error making generator\n");
 
         goto emergency_exit;
     }
-
 
     for (int i = 0; i < n; ++i) {
         printf("%.10g\n", generator->ops->next(generator));
@@ -80,8 +78,7 @@ main(int argc, char **argv)
 
     generator = generator->ops->destroy(generator);
 
-    if (dlclose(handle) != 0)
-    {
+    if (dlclose(handle) != 0) {
         fprintf(stderr, "Error closing shared object\n");
 
         goto emergency_exit;
@@ -90,8 +87,7 @@ main(int argc, char **argv)
     return EXIT_SUCCESS;
 
 emergency_exit:
-    if (dlclose(handle) != 0)
-    {
+    if (dlclose(handle) != 0) {
         fprintf(stderr, "Error closing shared object\n");
     }
 
