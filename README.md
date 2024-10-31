@@ -75,7 +75,7 @@ The `main.c` file loads the correct factory function using `dlsym` based on the 
 
 ## Example
 
-To generate 10 random numbers using the Mersenne Twister generator with seed `123456`:
+To generate 5 random numbers using the Mersenne Twister generator with seed `123456`:
 
 ```bash
 ./printrandom mt 5 123456
